@@ -1,6 +1,5 @@
 FROM jenkins/jenkins:latest
 ENV JAVA_OPTS -Djenkins.install.runSetupWizard=false
-ENV CASC_JENKINS_CONFIG /var/jenkins_home/casc.yaml
 USER root
 RUN apt-get update && apt-get install -y lsb-release ansible
 RUN curl -fsSLo /usr/share/keyrings/docker-archive-keyring.asc \
@@ -12,5 +11,5 @@ RUN echo "deb [arch=$(dpkg --print-architecture) \
 RUN apt-get update && apt-get install -y docker-ce-cli
 USER jenkins
 COPY plugins.txt /usr/share/jenkins/ref/plugins.txt
+COPY basic-security.groovy /usr/share/jenkins/ref/init.groovy.d/
 RUN jenkins-plugin-cli -f /usr/share/jenkins/ref/plugins.txt
-COPY casc.yaml /var/jenkins_home/casc.yaml
