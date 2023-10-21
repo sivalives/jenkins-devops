@@ -1,5 +1,6 @@
 FROM jenkins/jenkins:latest
 ENV JAVA_OPTS -Djenkins.install.runSetupWizard=false
+ARG DOCKER_HOST_IP
 USER root
 RUN apt-get update && apt-get install -y lsb-release ansible
 RUN curl -fsSLo /usr/share/keyrings/docker-archive-keyring.asc \
