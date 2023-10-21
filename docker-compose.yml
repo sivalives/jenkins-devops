@@ -26,8 +26,8 @@ services:
       - "8080:8080"
       - "50000:50000"
     volumes:
-      - ./jenkins-data:/var/jenkins_home:rw
-      - ./jenkins-docker-certs:/certs/client:ro
+      - jenkins-data:/var/jenkins_home:rw
+      - jenkins-docker-certs:/certs/client:ro
 
   docker_in_docker:
     image: docker:dind
@@ -42,5 +42,5 @@ services:
     ports:
       - "2376:2376"
     volumes:
-      - ./jenkins-docker-certs:/certs/client
-      - ./jenkins-data:/var/jenkins_home
+      - jenkins-docker-certs:/certs/client
+      - jenkins-data:/var/jenkins_home
