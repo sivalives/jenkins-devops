@@ -20,8 +20,8 @@ services:
       - DOCKER_HOST=tcp://docker:2376
       - DOCKER_CERT_PATH=/certs/client
       - DOCKER_TLS_VERIFY=1
-     #- JAVA_OPTS="-Djenkins.install.runSetupWizard=false"
-     # - JENKINS_OPTS="--argumentsRealm.roles.user=admin --argumentsRealm.passwd.admin=admin --argumentsRealm.roles.admin=admin"
+      - JENKINS_USERNAME=${JENKINS_USERNAME}
+      - JENKINS_PASSWORD=${JENKINS_PASSWORD}
     ports:
       - "8080:8080"
       - "50000:50000"
