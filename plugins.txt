@@ -3,13 +3,11 @@ git:latest
 github:latest
 workflow-aggregator:latest
 credentials:latest
-workspace-cleanup:latest
 email-ext:latest
 maven-plugin:latest
 docker-plugin:latest
 jira:latest
 artifactory:latest
-slack:latest
 htmlpublisher:latest
 nodejs:latest
 sonar:latest
