@@ -13,5 +13,5 @@ USER jenkins
 COPY plugins.txt /usr/share/jenkins/ref/plugins.txt
 COPY basic-security.groovy /usr/share/jenkins/ref/init.groovy.d/
 COPY jenkins.model.JenkinsLocationConfiguration.xml /usr/share/jenkins/ref/
-RUN sed -i 's/localhost/${DOCKER_HOST_IP}/g' /usr/share/jenkins/ref/jenkins.model.JenkinsLocationConfiguration.xml
+RUN sed -i "s/localhost/${DOCKER_HOST_IP}/g" /usr/share/jenkins/ref/jenkins.model.JenkinsLocationConfiguration.xml
 RUN jenkins-plugin-cli -f /usr/share/jenkins/ref/plugins.txt
