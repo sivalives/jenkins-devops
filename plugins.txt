@@ -14,9 +14,11 @@ sonar:latest
 junit:latest
 pipeline-utility-steps:latest
 matrix-project:latest
-slack-notifier:latest
 copyartifact:latest
 job-dsl:latest
+
+#Mandatory for authorization used in casc.yaml
+authorize-project:latest
 
 # Docker-Related Plugins
 docker-commons:latest
