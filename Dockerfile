@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:latest
+FROM jenkins/jenkins:2.414.2-jdk17
 ENV JAVA_OPTS -Djenkins.install.runSetupWizard=false
 ARG DOCKER_HOST_IP
 USER root
